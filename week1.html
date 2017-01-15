@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<script>
+			function displayBook(e, book){
+				X = e.clientX;
+				Y = e.clientY;
+				//alert("hello");
+				selectBook = document.getElementById(book);
+				with(selectBook.style){
+					display = "block";
+					position = "absolute";
+					fontSize = "smaller";
+					top = Y;
+					left = X;
+					backgroundColor = "yellow";
+				}
+			}	
+			function clearBook(book){
+				document.getElementById(book).style.display = "None";
+			}				
+
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<img src="http://www.mkvcinemas.info/wp-content/uploads/imdbcache/tt0417741.jpg"
+					style = "width:256px;height:256px;"
+					onmouseover = "displayBook(event,'book1');"
+					onmouseout = "clearBook('book1')"/>
+				</td>
+				<td>
+					<img src="https://s-media-cache-ak0.pinimg.com/236x/9e/ca/2c/9eca2c24a2362ff94c28e2d8cba4194a.jpg"
+					style="width:256px;height:256px;"
+					onmouseover = "displayBook(event,'book2');"
+					onmouseout = "clearBook('book2')"/>
+				</td>
+				<td>
+					<img src="http://www.mkvcinemas.info/wp-content/uploads/imdbcache/tt1201607.jpg"
+					style="width:256px;height:256px"
+					onmouseover = "displayBook(event,'book3');"
+					onmouseout = "clearBook('book3')"/>
+				</td>
+			</tr>
+		</table>
+		
+		<div id = "book1" style="display: None">
+			Designing Enterprise Applications with visual basic <br />
+			Robert Oliver <br />
+			Microsoft Press <br />
+		</div>
+
+		<div id = "book2" style="display: None">
+			11<br />
+		</div>
+		<div id = "book3" style ="display: None">
+			22<br />
+		</div>
+	</body>
+</html>
