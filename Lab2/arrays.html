@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+   function startup(){
+       var emptyArray = [] // an empty array
+       var workdays = ['mon', 'tue' , 'wed', 'thu', 'fri'];
+       
+       //populate an empty array
+       var i, reslut = "";
+       
+       for (i= 0 ; i < workdays.length ; i++){
+           emptyArray.push(i + 100);
+       }
+       
+        for (i= 0 ; i < workdays.length ; i++){
+           reslut = reslut + emptyArray[i].toString()
+           + ":" + workdays[i] + "<br />";
+       }
+       var lblMessage = document.getElementById("message");
+       lblMessage.innerHTML = reslut;
+   }
+</script>
+</head>
+    
+    
+<body onload = "startup()">
+    <span id = "message"></span>
+   
+    
+    
+</body>
+    
+    
+</html>

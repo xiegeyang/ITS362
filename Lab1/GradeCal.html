@@ -6,6 +6,9 @@
     .scoreInput[type=text] {
         width: 70px;
     }
+    .firstCol{
+        width:110px;
+    }
     .button {
         background-color: #4CAF50;
         border: none;
@@ -18,20 +21,9 @@
         margin: 10px 2px;
         cursor: pointer;
     }
+    
 </style>
-<script>
-    function input_onfocus(id){
-        input = document.getElementById(id);
-        if(input.value  == id) { 
-            input.value = ''; 
-        } 
-    }
-    function input_onblur(id){
-        input = document.getElementById(id);
-        if(input.value  == '') { 
-            input.value = id; 
-        } 
-    }
+<script  src="GradeScript.js"> 
 </script>
 </head>
 <body>
@@ -39,7 +31,7 @@
 <h1>Course Grade Calculater</h1>
 <table border="1">
 <tr>
-    <th>Assessment</th>
+    <th><p class="firstCol">Assessment</p></th>
     <th style="width: 70px">Session 1</th>
     <th>Session 2</th>
     <th>Session 3</th>
