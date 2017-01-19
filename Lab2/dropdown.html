@@ -12,15 +12,23 @@
         option.setAttribute("value",100);
         dropdown.appendChild(option);
     }
+    function displaySelection(){
+        var dropdown = document.getElementById("dropdownlist");
+        var index = dropdown.selectedIndex;
+        var value = dropdown.childNodes.item(index).attributes.getNamedItem("value").value;
+        text = dropdown.childNodes.item(index).text;
+        
+        lblMessage = document.getElementById("message");
+        lblMessage.innerHTML = "You selected item " + text + "and the value is: " + value;
+    }
 </script>
 </head>
-    
     
 <body>
     <form>
         New Dropdown item: <input type = "text" id ="newitem" />
         <input type = "button" onclick = "additem()" /><br />
-        Dropdown List: <select id = "dropdownlist" ></select>
+        Dropdown List: <select id = "dropdownlist" onchange="displaySelection()"></select>
         <span id = "message"></span>
     </form>
     
