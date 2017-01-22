@@ -10,6 +10,12 @@ function input_onblur(id) {
         input.value = id; 
     } 
 }
+function checkIsNan(inputValue){
+    if(isNaN(inputValue)){
+        alert("Your in put is not valid.");
+        return true;
+    }
+}
 
 function getFinalGrade(){
     lab1 = parseFloat(document.getElementById("input_lab1").value);
@@ -59,7 +65,7 @@ function getFinalGrade(){
     part15 = parseFloat(document.getElementById("Session 15").value);
     
     finalGrade = (lab1 + lab2 + lab3 + lab4 + lab5 + lab6 + lab7 + lab8 + lab9 + lab10)*0.3 +(quiz1 + quiz2 + quiz3 + quiz4 + quiz5 + quiz6 + quiz7 + quiz9 + quiz10)*0.1 + (exam1 + exam2)*0.3 + project1*0.2 + extra1*0.05 + (part1 + part2 + part3 + part4 + part5 + part6 + part7 + part8 + part9 + part10 + part11 + part12 + part13 + part14 + part15)*0.1;
-    alert(finalGrade.toString());
     
-    
+    if(!checkIsNan(finalGrade))
+        alert(finalGrade.toString());
 }
