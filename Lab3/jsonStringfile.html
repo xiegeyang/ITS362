@@ -1,0 +1,32 @@
+<html>
+    
+<head>
+<script>
+    //person constructor
+    
+    function Person(firstName, lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+      
+    function test(){
+        var person1 = new Person("John", "Doe");
+        var json_string = JSON.stringify(person1);
+        var lblMessage = document.getElementById("message");
+        lblMessage.innerHTML = json_string;
+    }
+    
+</script>
+    
+</head>
+    
+    
+<body onload = "test()">
+    
+<span id ="message"></span>
+    
+    
+</body>
+    
+
+</html>

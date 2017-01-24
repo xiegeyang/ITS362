@@ -1,0 +1,37 @@
+<html>
+    
+<head>
+<script>
+    //person constructor
+    function Person(){
+        this.firstName = "";
+        this.lastName = "";
+        
+        // nameless method/fuction
+        this.getFullName = function(){
+            return this.firstName + " " + this.lastName;
+        } 
+    }
+    
+    function displayPerson(){
+        var person1 = new Person();
+        person1.firstName = "John";
+        person1.lastName = "Doe";
+        var fullName = person1.getFullName();
+        lblMessage = document.getElementById("message");
+        lblMessage.innerHTML = fullName;
+    }
+</script>
+    
+</head>
+    
+    
+<body onload = "displayPerson()">
+    
+<span id ="message"></span>
+    
+    
+</body>
+    
+
+</html>
