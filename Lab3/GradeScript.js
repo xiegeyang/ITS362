@@ -1,3 +1,4 @@
+var finalGrades;
 function input_onfocus(id) {
     input = document.getElementById(id);
     if(input.value  == id) { 
@@ -36,7 +37,7 @@ function getFinalGrade(){
         }
     }
     
-    var labAss = new Assessment("LabAssessment", 30.0, totalLab/10.0);
+    var labAss = new Assessment("LabAssessment", 250.0, totalLab);
     
     
     
@@ -51,21 +52,21 @@ function getFinalGrade(){
             maxQuiz = quizes[i-1];
         }
     }
-    var quizAss = new Assessment("QuizAssessment", 10.0, totalQuiz/10.0);
+    var quizAss = new Assessment("QuizAssessment", 100.0, totalQuiz);
     
     
     exam1 = parseFloat(document.getElementById("input_exam1").value);
     exam2 = parseFloat(document.getElementById("input_exam2").value);
     var totalExam = exam1 + exam2;
     var exams = [exam1, exam2];
-    var examAss = new Assessment("examAssessment", 30.0, totalExam/2.0);
+    var examAss = new Assessment("examAssessment", 200.0, totalExam);
     
     
     project1 = parseFloat(document.getElementById("input_project1").value);
-    var projectAss = new Assessment("ProjectAssessment", 20.0, project1);
+    var projectAss = new Assessment("ProjectAssessment", 100.0, project1);
    
     extra1 = parseFloat(document.getElementById("input_extra1").value);
-    var extraAss = new Assessment("extraAssessment", 5.0, extra1);
+    var extraAss = new Assessment("extraAssessment", 25.0, extra1);
    
     
     var totalPart = 0;
@@ -75,19 +76,35 @@ function getFinalGrade(){
         parts[i-1] = parseFloat(document.getElementById(tempSess).value);
         totalPart += parts[i-1];
     }
-    var partAss = new Assessment("partAssessment", 10, totalPart/15.0);
-    
-    finalGrade = totalLab*0.3 +totalQuiz*0.1 + totalExam*0.3 + project1*0.2 + extra1*0.05 + totalPart*0.1;
-    
+    var partAss = new Assessment("partAssessment", 75, totalPart);
+    var grades = [labAss, quizAss, examAss, projectAss, extraAss, partAss];
+    finalGrades = new FinalGrades(grades);
+    var finalGrade = finalGrades.calulateGrade();
+    //alert(finalGrade.toString());
     if(!checkIsNan(finalGrade)){
         var form_final = document.getElementById("form_finalGrade");
         form_final.innerHTML = "Your final grade is : " + getLevel(finalGrade);
     }
-        //alert(finalGrade.toString());
 }
 
-function FinalGrade(){
+function saveGrades(){
+    var json_string = JSON.stringify(finalGrades);
+    var textForm = document.getElementById("form_json");
+    textForm.innerHTML= json_string;
+    document.cookie = "courseCaculate = " + json_string + ";";
     
+}
+
+
+function FinalGrades(assessments){
+    this.assessments = assessments;
+    
+    this.calulateGrade = function(){
+        var totalGrade = 0.0;
+        var totalMaxGrade = 0.0;
+        var grade = (assessments[0].earnedpoint/assessments[0].maxpoint)*0.3 + (assessments[1].earnedpoint/assessments[1].maxpoint)*0.1 + (assessments[2].earnedpoint/assessments[2].maxpoint)*0.3 + (assessments[3].earnedpoint/assessments[3].maxpoint)*0.2 + (assessments[4].earnedpoint/assessments[4].maxpoint)*0.05 +(assessments[5].earnedpoint/assessments[5].maxpoint)*0.1
+        return grade * 100.00;
+    }
 }
 
 function getLevel(finalGrade){
