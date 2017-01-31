@@ -39,7 +39,7 @@
         function deleteCookie(){
             var cookieName = document.getElementById("cookieKey").value;
             var date = new Date();
-            date.setMonth(date.getMonth - 1);
+            date.setMonth(date.getMonth() - 1);
             document.cookie = cookieName + "=; expires=" + date.toUTCString();
         }
     </script>
