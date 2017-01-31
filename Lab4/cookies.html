@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script>
+        function setCookie(){
+            var cookieName = document.getElementById("cookieName").value;
+            var cookieValue = document.getElementById("cookieValue").value;
+            document.cookie = cookieName + "=" + escape(cookieValue) + ";";
+        }
+        
+        function listAllCookies(){
+            var cookies = document.cookie;
+            var cookieString = "";
+            
+            var cookiesArr = cookies.split(";");
+            for(i=0;i<cookiesArr.length;i++){
+                cookieString += cookiesArr[i] + "<br/>";
+            }
+            document.getElementById("message").innerHTML = cookieString;
+            
+        }
+        
+        function getCookie(){
+            
+            var cookies = document.cookie;
+            var cookieKey = document.getElementById("cookieKey").value;
+            var cookieString = ""
+            var cookiesArr = cookies.split(";");
+            for(i=0;i<cookiesArr.length;i++){
+                var temp = cookiesArr[i].split("=");
+                
+                if(temp[0].trim() == cookieKey){
+                    cookieString = cookieKey + ":" + unescape(temp[1]);
+                }
+                
+            }
+            document.getElementById("message").innerHTML = cookieString;
+        }
+        
+        function deleteCookie(){
+            var cookieName = document.getElementById("cookieKey").value;
+            var date = new Date();
+            date.setMonth(date.getMonth - 1);
+            document.cookie = cookieName + "=; expires=" + date.toUTCString();
+        }
+    </script>
+</head>
+    
+<body onload="">
+    Cookie name: <input type = "text" id = "cookieName" /> <br/>
+    Cookie value: <input type = "text" id = "cookieValue" /> <br/>
+    Cookie key: <input type = "text" id = "cookieKey" /> <br/>
+    
+    
+    <input type = "button" onclick="listAllCookies()" value="List all cookies" />
+    <input type = "button" onclick="setCookie()" value="Add/Set cookie" />
+    <input type = "button" onclick="getCookie()" value="Get Cookie" />
+    <input type = "button" onclick="deleteCookie()" value="Delete Cookie" />
+    
+    <br/><span id = "message"></span>
+</body>
+    
+    
+</html>

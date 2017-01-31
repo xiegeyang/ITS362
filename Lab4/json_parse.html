@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script>
+        function test(){
+            
+            var personString = '{"firstName" : "John", "lastName" : "Doe"}';
+            
+            var personObject = JSON.parse(personString);
+            var fullName = personObject.firstName + " " + personObject.lastName;
+            
+            var lblMessage = document.getElementById("message");
+            lblMessage.innerHTML = fullName;
+            
+        }
+    </script>
+</head>
+    
+<body onload="test()">
+    <span id = "message"></span>
+</body>
+    
+    
+</html>
