@@ -89,10 +89,15 @@ function getFinalGrade(){
 
 function saveGrades(){
     var json_string = JSON.stringify(finalGrades);
-    var textForm = document.getElementById("form_json");
-    textForm.innerHTML= json_string;
+    
     document.cookie = "courseCaculate = " + json_string + ";";
     
+}
+
+function showGrades(){
+    var json_string = document.cookie;
+    var textForm = document.getElementById("form_json");
+    textForm.innerHTML= json_string;
 }
 
 
