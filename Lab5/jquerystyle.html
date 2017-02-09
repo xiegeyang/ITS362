@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        table{border: solid 1px gray}
+        .border{border:dashed 1px red}
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+       function addBorder(){
+           //select html tags
+           $('td').css('border', "dashed 1px blue" );
+           $('th').css('border', "dashed 1px blue" );
+           
+           $("#message1").text("Borders added");
+       }
+        
+        function addBorder1(){
+           //select html tags
+           $("th").addClass("border");
+           $("td").addClass("border");
+           $("#message1").text("Borders 1 added");
+       }
+        
+        function changeFirstCell(){
+           //select html tags
+            
+           $("td").eq(0).text("first cell sold");
+            $("#message1").text("cell changed");
+       }
+        
+        function changeSecondCell(){
+            $("td").eq(3).text("second cell sold");
+            $("td").eq(3).css('color',"red");
+        }
+        
+        
+        function addLinks(){
+            $("a").eq(0).text("google");
+            $("a").eq(0).attr({'href':'http://www.google.com', "title" : "google.com"});
+            $("a").eq(1).text("baidu"); $("a").eq(1).attr({"href":"http://baidu.com","title":"baidu.com"});
+            $("a").eq(2).text("gmail"); $("a").eq(2).attr({"href":"http://gmail.com","title":"gmail.com"});
+        }
+    </script>
+</head>
+    
+<body>
+    <table>
+        <tr>
+            <th>column 1</th>
+            <th>column 2</th>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+        </tr>
+        <tr>
+            <td>cell 1</td>
+            <td>cell 2</td>
+        </tr>
+        
+        
+    </table>
+    <br/>
+    <input type = "button" value = "Add border" onclick="addBorder1()" /><br/>
+    <input type = "button" value = "Remove border" onclick="removeBorder1()" /><br/>
+    <input type = "button" value = "Add link" onclick="addLinks()" /><br/>
+    <input type = "button" value = "Change First Cell" onclick="changeFirstCell()" /><br/>
+    <input type = "button" value = "Change second Cell" onclick="changeSecondCell()" /><br/>
+    <a></a><br />
+    <a></a><br />
+    <a></a><br />
+    <span id="message1"></span><br/>
+</body>
+    
+</html>
