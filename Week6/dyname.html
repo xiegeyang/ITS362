@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        
+        <script>
+            function addRow(){
+                
+                var number1 = Math.floor(Math.random()*10);
+                var number2 = Math.floor(Math.random()*10);
+                var $new_row = $("<tr><td>"+number1+"</td><td>"+number2+"</rd></tr>");
+                $('table').children().append($new_row);
+            }
+            
+            
+            function getTotal(){
+                var i = 0;
+                i += $("td").each(function(){
+                    i+=parseFloat($(this).text());
+                    alert(i);
+                });
+                
+            }
+            
+            
+            function addClick(){
+                $("th").eq(0).bind("click",function(){
+                    alert("hello");
+                });
+            }
+        </script>
+        
+    </head>
+    
+    
+    
+    <body>
+        <table>
+        <tr>
+            <th>column1</th>
+            <th>column2</th>
+        </tr>
+        </table>
+        
+        <input type="button" value = "add row" onclick = "addRow()">
+        <input type ="button" value = "add Total" onclick="getTotal()">
+         <input type ="button" value = "add click" onclick="addClick()">
+        
+    </body>
+    
+</html>

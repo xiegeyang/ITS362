@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        table{border: solid 1px gray}
+        .border{border:dashed 1px red}
+    </style>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+       function addItem(){
+           var tempText = $("#itemtext").val();
+           var option = new Option(tempText);
+           $("#itemList").append($(option));
+           
+           $("#message").text("item added");
+       }
+       
+    </script>
+</head>
+    
+<body>
+    <input type="text" id = "itemtext" />
+    <select id="itemList">
+        <option></option>
+    </select>
+    <br/>
+    <input type = "button" value = "Add border" onclick="addItem()" /><br/>
+    
+    <a></a><br />
+    <a></a><br />
+    <a></a><br />
+    <span id="message"></span><br/>
+</body>
+    
+</html>

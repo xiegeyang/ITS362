@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Grade Calculater</title>
+<style></style>
+    
+<link rel="stylesheet" type="text/css" href="Gradestyle.css">
+
+<script src="http://code.jquery.com/jquery.min.js">
+</script>
+    
+<script  src="GradeScript.js"> 
+</script>
+</head>
+<body>
+
+<h1>Course Grade Calculater</h1>
+<table border="4">
+<tr>
+    <th><p class="firstCol">Assessment</p></th>
+    <th style="width: 70px">Session 1</th>
+    <th>Session 2</th>
+    <th>Session 3</th>
+    <th>Session 4</th>
+    <th>Session 5</th>
+    <th>Session 6</th>
+    <th>Session 7</th>
+    <th>Session 8</th>
+    <th>Session 9</th>
+    <th>Session 10</th>
+</tr>
+<tr id= "labtr">
+    <td>Lab Assignment</td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab1">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab2">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab3">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab4">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab5">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab6">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab7">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab8">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab9">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_lab10">
+    </td>
+</tr>
+<tr id="quiztr">
+    <td>Quiz</td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz1">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz2">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz3">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz4">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz5">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz6">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz7">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz8">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz9">
+    </td>
+    <td>
+        <input class="scoreInput" type="text" id="input_quiz10">
+    </td>
+</tr>
+<tr id = "examtr">
+    <td>Exam</td>
+    <td>
+        <input type="text" class="scoreInput" id="input_exam1">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" id="input_exam2">
+    </td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    
+</tr>
+<tr >
+    <td>Project</td>
+    <td>
+        <input type="text" class="scoreInput" id="input_project1">
+    </td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+</tr>
+<tr>
+    <td>Extra Credit</td>
+    <td>
+        <input type="text" class="scoreInput" id="input_extra1">
+    </td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+</tr>
+<tr id="parttr">
+    <td>Participation 1</td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part1" value = "Session 1"
+        id="Session 1"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part2" value = "Session 2" 
+        id="Session 2"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part3" value = "Session 3" 
+        id="Session 3"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part4" value = "Session 4"
+        id="Session 4"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part5" value = "Session 5"
+        id="Session 5"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part6" value = "Session 6"
+        id="Session 6"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part7" value = "Session 7"
+        id="Session 7"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part8" value = "Session 8"
+        id="Session 8"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part9" value = "Session 9"
+        id="Session 9"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part10" value = "Session 10"
+        id="Session 10"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+</tr>
+<tr id = "parttr2">
+    <td>Participation 2</td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part11" value = "Session 11"
+        id="Session 11"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part12" value = "Session 12" 
+        id="Session 12"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part13" value = "Session 13" 
+        id="Session 13"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part14" value = "Session 14"
+        id="Session 14"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>
+        <input type="text" class="scoreInput" name="input_part15" value = "Session 15"
+        id="Session 15"
+        onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">
+    </td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+</tr>
+
+</table>
+<button class="button" onclick= "getFinalGrade()">Caculate</button>
+<form id = "form_finalGrade"></form>
+<button class="button" onclick= "saveGrades()">Save</button>
+<button class="button" onclick= "showGrades()">Show</button>
+<form id = "form_json"></form>
+</body>
+</html>
