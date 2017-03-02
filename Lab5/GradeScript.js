@@ -39,7 +39,7 @@ function addQuiz(){
 
 function addExam(){
     if(countExam<1) {
-        $ass = $('<input type="text" class="scoreInput" id="input_exam'+(++countExam)+'">');
+        $ass = $('<input type="text" class="scoreInput" id="input_exam'+(++countExam+1)+'">');
         $("#examtd").append($ass);
     }
     
@@ -81,11 +81,11 @@ function getFinalGrade(){
     });
     var quizAss = new Assessment("QuizAssessment", 100.0, totalQuiz);
     
+    var totalExam = 0.0;
+    $("#examtr").find(".scoreInput").each(function(){
+        totalExam+=parseFloat($(this).val());
+    });
     
-    exam1 = parseFloat(document.getElementById("input_exam1").value);
-    exam2 = parseFloat(document.getElementById("input_exam2").value);
-    var totalExam = exam1 + exam2;
-    var exams = [exam1, exam2];
     var examAss = new Assessment("examAssessment", 200.0, totalExam);
     
     
