@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        
+        <script>
+            function addControls(){
+                $control = $("<input type = 'text' id = 'lab1' />");
+                $('#row1Field').append($control);
+            }
+        </script>
+        
+    </head>
+    
+    
+    
+    <body>
+        <table id="ipputTable">
+            <tr class="tdRow1">
+                <td>
+                    <input type="button" id="row1Btn" value="add controls" onclick="addControls()"/>
+                </td>
+                <td id = "row1Field">
+                    
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+    
+</html>

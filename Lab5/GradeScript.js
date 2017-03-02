@@ -1,4 +1,8 @@
 var finalGrades;
+var countLab = -1;
+var countQuiz = -1;
+var countExam =-1;
+var countPart = -1;
 function input_onfocus(id) {
     input = document.getElementById(id);
     if(input.value  == id) { 
@@ -18,6 +22,37 @@ function checkIsNan(inputValue){
     }
 }
 
+function addPart(){
+    
+    if(countPart<14) {
+        $ass = $(' <input type="text" class="scoreInput" name="input_part'+(++countPart)+'" value = "Session '+countPart+'" id="Session 1" onfocus="input_onfocus(this.id);" onblur="input_onblur(this.id);">');
+        $("#parttd").append($ass);
+    }
+}
+
+function addQuiz(){
+    if(countQuiz<9) {
+        $ass = $('  <input class="scoreInput" type="text" id="input_quiz'+(++countQuiz)+'">');
+        $("#quiztd").append($ass);
+    }
+}
+
+function addExam(){
+    if(countExam<1) {
+        $ass = $('<input type="text" class="scoreInput" id="input_exam'+(++countExam)+'">');
+        $("#examtd").append($ass);
+    }
+    
+}  
+
+function addLab(){
+   
+    if(countLab<9) {
+        $ass = $('<input class="scoreInput" type="text" id="input_lab'+(++countLab)+'">');
+        $("#labtd").append($ass);
+    }
+}
+
 function Assessment(name, maxpoint, earnedpoint){
     this.name = name;
     this.maxpoint = maxpoint;
@@ -28,8 +63,10 @@ function getFinalGrade(){
     var totalLab = 0.0;
     var maxlab = 0.0;
     var labs = [];
+    
     $("#labtr").find(".scoreInput").each(function(){
         totalLab+=parseFloat($(this).val());
+        
     });
 
     var labAss = new Assessment("LabAssessment", 250.0, totalLab);
@@ -79,6 +116,7 @@ function getFinalGrade(){
         var form_final = document.getElementById("form_finalGrade");
         form_final.innerHTML = "Your final grade is : " + getLevel(finalGrade);
     }
+    
 }
 
 function saveGrades(){

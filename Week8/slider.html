@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.0.js" ></script>
+        <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+        
+        
+        <script>
+            $("#slider-vertical").slider({
+                orienttion: "vertical",
+                range: "min",
+                min: 0,
+                max:100,
+                value:60,
+                slider: function(event, ui){ $("#amount").val(ui.val);}
+            });
+        </script>
+    </head>
+    <body>
+        <div id="slider-vertical" style="height:200px">
+        </div>
+        
+        <input type="text" id = "amount" />
+    
+    
+    </body>
+</html>
