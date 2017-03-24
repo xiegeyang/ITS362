@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Grade Calculater</title>
+<style></style>
+    
+<link rel="stylesheet" type="text/css" href="Gradestyle.css">
+
+<script src="http://code.jquery.com/jquery.min.js">
+</script>
+    
+<script  src="GradeScript.js"> 
+</script>
+</head>
+<body>
+
+<h1>Course Grade Calculater</h1>
+<table border="4">
+<tr>
+    
+</tr>
+<tr id="labtr">
+    <td><input type="button" value="Lab Assignment" onclick="addLab()"></td>
+    <td id="labtd"></td>
+    
+</tr>
+<tr id="quiztr">
+    <td><input type="button" value="Quiz Assignment" onclick="addQuiz()" /></td>
+    <td id="quiztd"></td>
+    
+</tr>
+<tr id = "examtr">
+    <td><input type="button" value="Exam Assignment" onclick="addExam()" /></td>
+    <td id = "examtd"></td>
+</tr>
+<tr >
+    <td>Project</td>
+    <td>
+        <input type="text" class="scoreInput" id="input_project1">
+    </td>
+    
+</tr>
+<tr>
+    <td>Extra Credit</td>
+    <td>
+        <input type="text" class="scoreInput" id="input_extra1">
+    </td>
+    
+</tr>
+<tr id="parttr">
+    <td><input type="button" value="Participation" onclick="addPart()" /></td>
+    <td id="parttd">
+       
+    </td>
+    
+
+</table>
+<button class="button" onclick= "getFinalGrade()">Caculate</button>
+<form id = "form_finalGrade"></form>
+<button class="button" onclick= "saveGrades()">Save</button>
+<button class="button" onclick= "showGrades()">Show</button>
+<form id = "form_json"></form>
+</body>
+</html>
